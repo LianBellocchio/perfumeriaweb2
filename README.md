@@ -24,5 +24,5 @@ Este proyecto diseña una base de datos para una tienda de perfumería, con el o
 
 ## Archivos 
 
-- `create_database.sql`: Script SQL para crear la base de datos e insertar datos de ejemplo.
-- `diagrama_base_datos.png`: Diagrama de la base de datos.
+- `database.sql`: Script SQL para crear la base de datos e insertar datos de ejemplo.
+- `DbDiagram.png`: Diagrama de la base de datos.
