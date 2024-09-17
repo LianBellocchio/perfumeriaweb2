@@ -6,7 +6,7 @@ Este proyecto diseña una base de datos para una tienda de perfumería, con el o
 
 ## Diagrama de la Base de Datos
 
-![Diagrama de la Base de Datos](./DbDiagram.png)
+![Diagrama de la Base de Datos](DbDiagram.png)
 
 ## Estructura de la Base de Datos
 
