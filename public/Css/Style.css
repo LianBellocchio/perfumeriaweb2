@@ -1,0 +1,227 @@
+body {
+    font-family: 'Georgia', serif; /* Fuente serif para un toque elegante */
+    background-color: #111111; /* Fondo oscuro elegante */
+    color: #f5f5f5; /* Texto en blanco crema */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #1a1a1a; /* Fondo oscuro para el encabezado */
+    color: #d4af37; /* Color dorado para el texto del encabezado */
+    padding: 20px 0; /* Espaciado interno */
+    text-align: center; /* Centrar el contenido */
+}
+
+header nav {
+    display: flex;
+    justify-content: center; /* Centrar los enlaces de navegación */
+    gap: 30px; /* Espaciado entre los elementos de navegación */
+}
+
+header nav ul {
+    list-style-type: none; /* Quitar los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav ul li a {
+    color: #d4af37; /* Color dorado para los enlaces */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold; /* Texto en negrita */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transición suave para cambios de color */
+}
+
+header nav ul li a:hover {
+    color: #ffffff; /* Cambiar a blanco al pasar el ratón */
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+/* Main Content */
+main {
+    padding: 40px; /* Espaciado interno */
+    background-color: #1a1a1a; /* Fondo oscuro para el contenido principal */
+    max-width: 800px; /* Ancho máximo */
+    margin: 50px auto; /* Centrar el contenido con margen vertical */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a; /* Fondo oscuro para el pie de página */
+    color: #bfbfbf; /* Texto gris claro */
+    text-align: center; /* Centrar el texto */
+    padding: 20px 0; /* Espaciado interno */
+    position: fixed; /* Fijar el pie de página en la parte inferior */
+    width: 100%; /* Ancho completo */
+    bottom: 0; /* Posicionar en la parte inferior */
+    border-top: 1px solid #333; /* Línea sutil para separar */
+}
+
+/* Buttons and Forms */
+button, input[type="submit"] {
+    background-color: #d4af37; /* Color dorado para los botones */
+    color: #111111; /* Texto oscuro para contraste */
+    border: none; /* Sin bordes */
+    padding: 12px 24px; /* Espaciado interno */
+    border-radius: 3px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+    font-weight: bold; /* Texto en negrita */
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #ffffff; /* Cambiar a blanco al pasar el ratón */
+    color: #111111; /* Cambiar el color del texto a oscuro */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Estilo para los enlaces dentro de los listados (Editar/Eliminar) */
+ul li a {
+    color: #d4af37; /* Dorado para los enlaces */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold; /* Texto en negrita */
+    margin-left: 10px; /* Espaciado izquierdo */
+    padding: 5px 15px; /* Espaciado interno */
+    border-radius: 3px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+ul li a.editar {
+    background-color: #4CAF50; /* Verde sutil para editar */
+    color: #fff; /* Texto blanco */
+}
+
+ul li a.eliminar {
+    background-color: #f44336; /* Rojo para eliminar */
+    color: #fff; /* Texto blanco */
+}
+
+ul li a.editar:hover, ul li a.eliminar:hover {
+    background-color: #555; /* Cambiar el fondo al pasar el ratón */
+    color: #fff; /* Mantener el texto blanco */
+}
+
+/* Product List Styles for Home Page */
+ul.productos {
+    list-style-type: none; /* Quitar los puntos de la lista */
+    padding: 0; /* Eliminar el relleno */
+    margin: 20px 0; /* Espaciado vertical */
+    display: flex; /* Usar flexbox */
+    flex-wrap: wrap; /* Ajustar los elementos en varias líneas */
+    gap: 20px; /* Espaciado entre las tarjetas */
+    justify-content: center; /* Centrar las tarjetas */
+}
+
+ul.productos li {
+    background-color: #222; /* Fondo gris oscuro */
+    margin-bottom: 15px; /* Espaciado inferior */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #444; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; /* Espaciado entre elementos */
+    transition: box-shadow 0.3s ease; /* Transición suave para la sombra */
+}
+
+ul.productos li:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); /* Efecto de sombra dorada */
+}
+
+ul.productos li strong {
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+    color: #f5f5f5; /* Texto blanco crema */
+}
+
+/* Improved Links */
+a {
+    color: #d4af37; /* Dorado para los enlaces */
+    text-decoration: none; /* Quitar subrayado */
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+a:hover {
+    color: #f5f5f5; /* Cambiar a blanco crema al pasar */
+    text-decoration: underline; /* Subrayar al pasar */
+}
+
+/* Improved Footer Styling */
+footer {
+    background-color: #1a1a1a;
+    color: #bfbfbf;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Improved List Styles for General Content */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 5px 0;
+    text-align: justify; /* Justificar texto */
+}
+
+/* Form Inputs */
+input[type="password"], input[type="text"], input[type="number"], textarea, select {
+    width: calc(100% - 20px); /* Ancho completo menos el relleno */
+    padding: 15px; /* Espaciado interno */
+    margin: 15px 0; /* Margen vertical */
+    border: 1px solid #444; /* Borde gris oscuro */
+    border-radius: 3px; /* Bordes redondeados */
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #f5f5f5; /* Texto blanco crema */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+input[type="password"]:focus, input[type="text"]:focus, input[type="number"]:focus, textarea:focus, select:focus {
+    border-color: #d4af37; /* Borde dorado al enfocar */
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5); /* Sombra dorada al enfocar */
+}
+
+/* Adjust the Main Container */
+main {
+    padding: 40px;
+    margin-top: 20px;
+    background-color: #1a1a1a;
+    max-width: 1000px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Flexbox Alignment for Product Lists */
+ul.productos li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+ul.productos li div.buttons {
+    align-self: flex-end;
+}
+
+/* Center Content */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Styling for the Gold Accent Line */
+.header-line {
+    background-color: #d4af37;
+    height: 2px;
+    width: 100%;
+    margin: 20px 0;
+}

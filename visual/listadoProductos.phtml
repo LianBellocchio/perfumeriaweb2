@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<?php include 'header.phtml'; ?>
+<h1>Listado de Productos</h1>
+<a href="index.php?controller=Producto&action=agregar">Agregar Producto</a>
+<ul class="productos">
+    <?php foreach ($productos as $producto): ?>
+        <li>
+            <?php echo htmlspecialchars($producto['nombre_producto']); ?> - 
+            <?php echo htmlspecialchars($producto['nombre_categoria']); ?> - 
+            $<?php echo htmlspecialchars($producto['precio']); ?>
+            <a href="index.php?controller=Producto&action=detalle&id=<?php echo $producto['id_producto']; ?>">Ver Detalle</a>
+            <a href="index.php?controller=Producto&action=editar&id=<?php echo $producto['id_producto']; ?>">Editar</a>
+            <a href="index.php?controller=Producto&action=eliminar&id=<?php echo $producto['id_producto']; ?>">Eliminar</a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
+<?php include 'footer.phtml'; ?>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo isset($ingrediente) ? 'Editar Ingrediente' : 'Agregar Ingrediente'; ?></title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <h1><?php echo isset($ingrediente) ? 'Editar Ingrediente' : 'Agregar Ingrediente'; ?></h1>
+
+    <form action="index.php?controller=Ingrediente&action=<?php echo isset($ingrediente) ? 'actualizar' : 'guardar'; ?>" method="POST">
+        <?php if (isset($ingrediente)): ?>
+            <input type="hidden" name="id_ingrediente" value="<?php echo htmlspecialchars($ingrediente['id_ingrediente']); ?>">
+        <?php endif; ?>
+
+        <label for="nombre_ingrediente">Nombre del Ingrediente:</label>
+        <input type="text" id="nombre_ingrediente" name="nombre_ingrediente" value="<?php echo isset($ingrediente) ? htmlspecialchars($ingrediente['nombre_ingrediente']) : ''; ?>" required><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required><?php echo isset($ingrediente) ? htmlspecialchars($ingrediente['descripcion']) : ''; ?></textarea><br>
+
+        <button type="submit"><?php echo isset($ingrediente) ? 'Actualizar Ingrediente' : 'Guardar Ingrediente'; ?></button>
+    </form>
+
+    <a href="index.php?controller=Ingrediente&action=listar">Volver al listado de ingredientes</a>
+</body>
+</html>

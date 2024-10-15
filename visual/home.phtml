@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido a Perfumería</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.php?controller=Home&action=mostrarHome">Inicio</a></li>
+                <li><a href="index.php?controller=Producto&action=listar">Productos</a></li>
+                <li><a href="index.php?controller=User&action=login">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Bienvenido a la Perfumería</h1>
+        <h2>Productos Disponibles</h2>
+        <ul class="productos">
+            <?php if (isset($productos) && is_array($productos) && count($productos) > 0): ?>
+                <?php foreach ($productos as $producto): ?>
+                    <li>
+                        <strong><?php echo htmlspecialchars($producto['nombre_producto']); ?></strong><br>
+                        <span><?php echo htmlspecialchars($producto['descripcion']); ?></span><br>
+                        <span>$<?php echo htmlspecialchars($producto['precio']); ?></span>
+                    </li>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <li>No hay productos disponibles en este momento.</li>
+            <?php endif; ?>
+        </ul>
+        <a href="index.php?controller=User&action=login">Iniciar Sesión como Administrador</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Perfumería Divain. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <h1>Detalle del Producto</h1>
+    <p><strong>Nombre:</strong> <?php echo htmlspecialchars($producto['nombre_producto']); ?></p>
+    <p><strong>Descripción:</strong> <?php echo htmlspecialchars($producto['descripcion']); ?></p>
+    <p><strong>Precio:</strong> $<?php echo htmlspecialchars($producto['precio']); ?></p>
+    <p><strong>Categoría:</strong> <?php echo htmlspecialchars($producto['id_categoria']); ?></p>
+    <a href="index.php?controller=Producto&action=listar">Volver al listado de productos</a>
+</body>
+</html>

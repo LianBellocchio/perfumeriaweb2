@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Ingredientes</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <h1>Listado de Ingredientes</h1>
+    <a href="index.php?controller=Ingrediente&action=agregar">Agregar Ingrediente</a>
+    <ul class="productos">
+        <?php foreach ($ingredientes as $ingrediente): ?>
+            <li>
+                <?php echo htmlspecialchars($ingrediente['nombre_ingrediente']); ?> - 
+                <?php echo htmlspecialchars($ingrediente['descripcion']); ?>
+                <a href="index.php?controller=Ingrediente&action=editar&id=<?php echo $ingrediente['id_ingrediente']; ?>">Editar</a>
+                <a href="index.php?controller=Ingrediente&action=eliminar&id=<?php echo $ingrediente['id_ingrediente']; ?>">Eliminar</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <a href="index.php?controller=Producto&action=listar">Volver al menú</a>
+    <?php include 'footer.phtml'; ?>
+</body>
+</html>
