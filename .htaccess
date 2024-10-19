@@ -1,4 +1,36 @@
 RewriteEngine On
-RewriteRule ^categorias$ index.php?controller=Categoria&action=listar [L]
-RewriteRule ^productos$ index.php?controller=Producto&action=listar [L]
+
+# Prefijo DivainParfums para todas las rutas
+RewriteBase /DivainParfums/
+
+# Redirigir a la página de inicio
+RewriteRule ^inicio$ index.php?controller=Home&action=mostrarHome [L]
+
+# Redirigir a la vista de productos
+RewriteRule ^producto$ index.php?controller=Producto&action=listar [L]
+RewriteRule ^producto/agregar$ index.php?controller=Producto&action=agregar [L]
+RewriteRule ^producto/guardar$ index.php?controller=Producto&action=guardar [L]
+RewriteRule ^producto/editar/([0-9]+)$ index.php?controller=Producto&action=editar&id=$1 [L]
+RewriteRule ^producto/actualizar$ index.php?controller=Producto&action=actualizar [L]
+RewriteRule ^producto/eliminar/([0-9]+)$ index.php?controller=Producto&action=eliminar&id=$1 [L]
 RewriteRule ^producto/([0-9]+)$ index.php?controller=Producto&action=detalle&id=$1 [L]
+
+# Redirigir a la vista de categorías
+RewriteRule ^categoria$ index.php?controller=Categoria&action=listar [L]
+RewriteRule ^categoria/agregar$ index.php?controller=Categoria&action=agregar [L]
+RewriteRule ^categoria/guardar$ index.php?controller=Categoria&action=guardar [L]
+RewriteRule ^categoria/editar/([0-9]+)$ index.php?controller=Categoria&action=editar&id=$1 [L]
+RewriteRule ^categoria/actualizar$ index.php?controller=Categoria&action=actualizar [L]
+RewriteRule ^categoria/eliminar/([0-9]+)$ index.php?controller=Categoria&action=eliminar&id=$1 [L]
+
+# Redirigir a la vista de ingredientes
+RewriteRule ^ingrediente$ index.php?controller=Ingrediente&action=listar [L]
+RewriteRule ^ingrediente/agregar$ index.php?controller=Ingrediente&action=agregar [L]
+RewriteRule ^ingrediente/guardar$ index.php?controller=Ingrediente&action=guardar [L]
+RewriteRule ^ingrediente/editar/([0-9]+)$ index.php?controller=Ingrediente&action=editar&id=$1 [L]
+RewriteRule ^ingrediente/actualizar$ index.php?controller=Ingrediente&action=actualizar [L]
+RewriteRule ^ingrediente/eliminar/([0-9]+)$ index.php?controller=Ingrediente&action=eliminar&id=$1 [L]
+
+# Redirigir a la página de login y logout
+RewriteRule ^login$ index.php?controller=User&action=login [L]
+RewriteRule ^logout$ index.php?controller=User&action=logout [L]

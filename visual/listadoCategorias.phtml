@@ -1,23 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Listado de Categorías</title>
-    <link rel="stylesheet" href="public/css/style.css">
+    <link href="/DivainParfums/public/css/style.css" rel="stylesheet">
 </head>
 <body>
     <h1>Listado de Categorías</h1>
-    <a href="index.php?controller=Categoria&action=agregar">Agregar Categoría</a>
+    <a href="/DivainParfums/categoria/agregar">Agregar Categoría</a>
     <ul class="productos">
         <?php foreach ($categorias as $categoria): ?>
-            <li>
-                <?php echo htmlspecialchars($categoria['nombre_categoria']); ?>
-                <a href="index.php?controller=Categoria&action=editar&id=<?php echo $categoria['id_categoria']; ?>">Editar</a>
-                <a href="index.php?controller=Categoria&action=eliminar&id=<?php echo $categoria['id_categoria']; ?>">Eliminar</a>
+            <li><?php echo htmlspecialchars($categoria['nombre_categoria']); ?>
+                <a href="/DivainParfums/categoria/editar/<?php echo $categoria['id_categoria']; ?>">Editar</a> 
+                <a href="/DivainParfums/categoria/eliminar/<?php echo $categoria['id_categoria']; ?>">Eliminar</a>
             </li>
         <?php endforeach; ?>
     </ul>
-    <a href="index.php?controller=Producto&action=listar">Volver al menú</a>
+    <a href="/DivainParfums/producto">Volver al menú</a>
     <?php include 'footer.phtml'; ?>
 </body>
 </html>

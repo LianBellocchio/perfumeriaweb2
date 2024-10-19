@@ -1,40 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title><?php echo isset($producto) ? 'Editar Producto' : 'Agregar Producto'; ?></title>
-    <link rel="stylesheet" href="public/css/style.css">
+    <link href="/DivainParfums/public/css/style.css" rel="stylesheet">
 </head>
 <body>
     <h1><?php echo isset($producto) ? 'Editar Producto' : 'Agregar Producto'; ?></h1>
-
-    <form action="index.php?controller=Producto&action=<?php echo isset($producto) ? 'actualizar' : 'guardar'; ?>" method="POST">
+    <form action="/DivainParfums/producto/<?php echo isset($producto) ? 'actualizar' : 'guardar'; ?>" method="POST">
         <?php if (isset($producto)): ?>
-            <input type="hidden" name="id_producto" value="<?php echo htmlspecialchars($producto['id_producto']); ?>">
+            <input name="id_producto" value="<?php echo htmlspecialchars($producto['id_producto']); ?>" type="hidden">
         <?php endif; ?>
 
         <label for="nombre_producto">Nombre del Producto:</label>
-        <input type="text" id="nombre_producto" name="nombre_producto" value="<?php echo isset($producto) ? htmlspecialchars($producto['nombre_producto']) : ''; ?>" required><br>
-
+        <input name="nombre_producto" value="<?php echo isset($producto) ? htmlspecialchars($producto['nombre_producto']) : ''; ?>" id="nombre_producto" required><br>
+        
         <label for="descripcion">Descripción:</label>
         <textarea id="descripcion" name="descripcion" required><?php echo isset($producto) ? htmlspecialchars($producto['descripcion']) : ''; ?></textarea><br>
-
+        
         <label for="precio">Precio:</label>
-        <input type="number" step="0.01" id="precio" name="precio" value="<?php echo isset($producto) ? htmlspecialchars($producto['precio']) : ''; ?>" required><br>
-
+        <input name="precio" value="<?php echo isset($producto) ? htmlspecialchars($producto['precio']) : ''; ?>" id="precio" required step="0.01" type="number"><br>
+        
         <label for="id_categoria">Categoría:</label>
         <select id="id_categoria" name="id_categoria" required>
             <?php foreach ($categorias as $categoria): ?>
-                <option value="<?php echo $categoria['id_categoria']; ?>"
-                    <?php echo (isset($producto) && $producto['id_categoria'] == $categoria['id_categoria']) ? 'selected' : ''; ?>>
+                <option value="<?php echo $categoria['id_categoria']; ?>" <?php echo (isset($producto) && $producto['id_categoria'] == $categoria['id_categoria']) ? 'selected' : ''; ?>>
                     <?php echo htmlspecialchars($categoria['nombre_categoria']); ?>
                 </option>
             <?php endforeach; ?>
         </select><br>
+        
+        <label>Ingredientes:</label><br>
+        <?php foreach ($ingredientes as $ingrediente): ?>
+            <label>
+                <input type="checkbox" name="ingredientes[<?php echo $ingrediente['id_ingrediente']; ?>]" value="1" 
+                <?php echo (isset($producto_ingredientes) && in_array($ingrediente['id_ingrediente'], array_column($producto_ingredientes, 'id_ingrediente'))) ? 'checked' : ''; ?>>
+                <?php echo htmlspecialchars($ingrediente['nombre_ingrediente']); ?>
+            </label><br>
+        <?php endforeach; ?>
 
         <button type="submit"><?php echo isset($producto) ? 'Actualizar Producto' : 'Guardar Producto'; ?></button>
     </form>
-
-    <a href="index.php?controller=Producto&action=listar">Volver al listado de productos</a>
+    <a href="/DivainParfums/producto">Volver al listado de productos</a>
 </body>
 </html>
